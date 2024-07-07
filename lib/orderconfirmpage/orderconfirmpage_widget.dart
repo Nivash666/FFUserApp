@@ -110,9 +110,12 @@ class _OrderconfirmpageWidgetState extends State<OrderconfirmpageWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    await OrdersTable().insert({
-                      'checkin': true,
-                    });
+                    await OrdersTable().update(
+                      data: {
+                        'checkin': true,
+                      },
+                      matchingRows: (rows) => rows,
+                    );
                   },
                   text: 'Check in',
                   options: FFButtonOptions(
