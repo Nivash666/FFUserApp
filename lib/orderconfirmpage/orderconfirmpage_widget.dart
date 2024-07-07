@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -108,8 +109,10 @@ class _OrderconfirmpageWidgetState extends State<OrderconfirmpageWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    await OrdersTable().insert({
+                      'checkin': true,
+                    });
                   },
                   text: 'Check in',
                   options: FFButtonOptions(

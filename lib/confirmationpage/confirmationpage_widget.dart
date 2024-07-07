@@ -106,50 +106,6 @@ class _ConfirmationpageWidgetState extends State<ConfirmationpageWidget> {
                     ),
                   ),
                   Expanded(
-                    child: Builder(
-                      builder: (context) {
-                        final gettimeslotsfunction = functions
-                            .timeslotCustomfunction(
-                                confirmationpageShopsRow!.blockMinute!,
-                                confirmationpageShopsRow.bufferTime!,
-                                confirmationpageShopsRow.openTo!,
-                                confirmationpageShopsRow.closeTo!)
-                            .toList();
-                        return ListView.builder(
-                          padding: EdgeInsets.zero,
-                          scrollDirection: Axis.horizontal,
-                          itemCount: gettimeslotsfunction.length,
-                          itemBuilder: (context, gettimeslotsfunctionIndex) {
-                            final gettimeslotsfunctionItem =
-                                gettimeslotsfunction[gettimeslotsfunctionIndex];
-                            return Container(
-                              width: 80.0,
-                              height: 0.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    gettimeslotsfunctionItem,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                        );
-                      },
-                    ),
-                  ),
-                  Expanded(
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Builder(
@@ -375,58 +331,6 @@ class _ConfirmationpageWidgetState extends State<ConfirmationpageWidget> {
                         width: 1.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
-                    ),
-                  ),
-                  Expanded(
-                    child: Builder(
-                      builder: (context) {
-                        final customTimeSlotfuncxtion = functions
-                            .timeslotCustomfunction(
-                                confirmationpageShopsRow!.blockMinute!,
-                                confirmationpageShopsRow.bufferTime!,
-                                confirmationpageShopsRow.openTo!,
-                                confirmationpageShopsRow.closeTo!)
-                            .toList();
-                        return GridView.builder(
-                          padding: EdgeInsets.zero,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 10.0,
-                            mainAxisSpacing: 10.0,
-                            childAspectRatio: 1.0,
-                          ),
-                          scrollDirection: Axis.vertical,
-                          itemCount: customTimeSlotfuncxtion.length,
-                          itemBuilder: (context, customTimeSlotfuncxtionIndex) {
-                            final customTimeSlotfuncxtionItem =
-                                customTimeSlotfuncxtion[
-                                    customTimeSlotfuncxtionIndex];
-                            return Container(
-                              width: 100.0,
-                              height: 100.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    customTimeSlotfuncxtionItem,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                        );
-                      },
                     ),
                   ),
                 ],
